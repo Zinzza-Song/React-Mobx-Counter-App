@@ -1,10 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 import "react";
-import "./App.css";
 import { observer } from "mobx-react";
+import "./App.css";
+import { useCounterStore } from "./context/counterContext";
 
-function App({ myCount }) {
-  console.log("myCount", myCount);
+function App() {
+  const myCount = useCounterStore();
+
   return (
     <div style={{ textAlign: "center", padding: 16 }}>
       카운트: {myCount.count}
